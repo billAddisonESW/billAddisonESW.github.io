@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta http-equiv="Cache-Control" content="no-store; no-cache"/>
+  <title>Bank of Scifest</title>
+  <link rel=stylesheet href="bank.css">
+  <link rel=stylesheet href="toastify.css">
+  <script src="toastify.js"></script>
+</head>
+<body>
+<script type="text/javascript"> // inline javascript like it's 1999
+                                // ***spoilers below*** - you have been advised
+  var username=document.URL.substring(document.URL.indexOf("?")+10,document.URL.indexOf("&"));
+  var password=document.URL.substring(document.URL.indexOf("&")+10,document.URL.length);
+  if (!(password == "mysupersecretpassword" || password == "thebestpasswordintheuniverse")) {
+    alert("Access Denied");
+    window.close();
+  }
+
+  var balance=119524.13; // or whatever
+
+  function currencyFormat(num) {
+    return '&pound;' + num.toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
+  }
+
+  function newCard() {
+    var myToast = Toastify({
+  	 text: "Sorry, new cards are not being issued at the moment due to hacker activity.<br><br>Have a Nice Day! 😃",
+  	 duration: 4000,
+     gravity: 'bottom',
+     positionLeft: true,
+  	})
+    myToast.showToast();
+  }
+
+  function payBills() {
+    var myToast = Toastify({
+  	 text: "The bill payment system is currently down due to DDoS attacks.<br><br>Have a Nice Day! 😃",
+  	 duration: 4000,
+     gravity: 'bottom',
+     positionLeft: true,
+  	})
+    myToast.showToast();
+  }
+
+  function startTransfer() {
+    document.getElementById('optionsFigure').style.display = 'none';
+    document.getElementById('transferFigure').style.display = 'block';
+    hacker();
+  }
+
+  function endTransfer() {
+    var myToast = Toastify({
+     text: "Money transferred.<br><br>Have a Nice Day! 😃",
+     duration: 4000,
+     gravity: 'bottom',
+     positionLeft: true
+    })
+    myToast.showToast();
+
+    var aNumber = document.getElementById('accountNumber').value;
+    var tAmount = document.getElementById('transferAmount').value;
+    balance = balance - tAmount;
+    formatted_balance = currencyFormat(balance);
+    document.getElementById('optionsFigure').style.display = 'block';
+    document.getElementById('transferFigure').style.display = 'none';
+    document.getElementById('displayBalance').innerHTML = formatted_balance;
+    if (balance < 0) {
+      document.getElementById('displayBalance').style.color = 'red';
+    }
+    if (tAmount > 50000 && aNumber == 1337 && hackStage < 1337) {
+      window.setTimeout( function() {
+        // dramatic pause
+      }, 2000);
+      var myToast = Toastify({
+    	 text: "Checking...",
+    	 duration: 2000,
+       hacker: true,
+    	})
+      myToast.showToast();
+      window.setTimeout( function() {
+      var myToast = Toastify({
+    	 text: "NOOO! Are you trying to get us both arrested!",
+    	 duration: 2000,
+       hacker: true,
+      })
+      myToast.showToast();
+      }, 4000);
+      window.setTimeout( function() {
+      var myToast = Toastify({
+    	 text: "I'm out of here. Keep working on it, kid 🙄",
+    	 duration: 4000,
+       hacker: true,
+    	 })
+       myToast.showToast();
+      }, 6000)
+      hackStage = 1337;
+    }
+  }
+
+  function cancelTransaction(){
+    var myToast = Toastify({
+     text: "Transaction Cancelled.<br><br>Have a Nice Day! 😃",
+     duration: 4000,
+     gravity: 'bottom',
+     positionLeft: true
+    })
+    myToast.showToast();
+    document.getElementById('optionsFigure').style.display = 'block';
+    document.getElementById('transferFigure').style.display = 'none';
+  }
+
+  function transferFunds() {
+    var tAmount = document.getElementById('transferAmount').value;
+    var aNumber = document.getElementById('accountNumber').value;
+    if (tAmount == 50000 && aNumber == 1337 && hackStage < 1337) {
+      window.setTimeout( function() {
+        // dramatic pause
+      }, 2000);
+      var myToast = Toastify({
+    	 text: "Checking...",
+    	 duration: 2000,
+       hacker: true,
+    	})
+      myToast.showToast();
+      window.setTimeout( function() {
+      var myToast = Toastify({
+    	 text: "YES!",
+    	 duration: 1000,
+       hacker: true,
+    	 })
+      myToast.showToast();
+      }, 4000);
+      window.setTimeout( function() {
+      var myToast = Toastify({
+    	 text: "YES YES YES!",
+    	 duration: 1500,
+       hacker: true,
+    	 })
+      myToast.showToast();
+      }, 5000);
+      window.setTimeout( function() {
+      var myToast = Toastify({
+    	 text: "You are ELITE!",
+    	 duration: 3000,
+       hacker: true,
+    	 })
+      myToast.showToast();
+      }, 6500);
+      window.setTimeout( function() {
+      var myToast = Toastify({
+    	 text: "See you around, kid 😉<br>-=z3r0 coo1=-",
+    	 duration: 4000,
+       hacker: true,
+    	 })
+      myToast.showToast();
+    }, 10500);
+      hackStage = 1337; // lol
+    } else if (tAmount < 50000 && tAmount > 0 && aNumber == 1337 && hackStage < 1337) {
+      window.setTimeout( function() {
+        // dramatic pause
+      }, 2000);
+      var myToast = Toastify({
+    	 text: "Checking...",
+    	 duration: 2000,
+       hacker: true,
+    	})
+      myToast.showToast();
+      window.setTimeout( function() {
+      var myToast = Toastify({
+    	 text: "Pfff. Yer Da sells Avon 😒",
+    	 duration: 2000,
+       hacker: true,
+      })
+      myToast.showToast();
+      }, 4000);
+      window.setTimeout( function() {
+      var myToast = Toastify({
+    	 text: "50 Gs, Account 1337. Be quick, you never know who's watching...",
+    	 duration: 6000,
+       hacker: true,
+    	 })
+       myToast.showToast();
+      }, 6000)
+    } else if (tAmount < 0 && aNumber == 1337 && hackStage < 1337) {
+      window.setTimeout( function() {
+      }, 2000);
+      var myToast = Toastify({
+    	 text: "Checking...",
+    	 duration: 2000,
+       hacker: true,
+    	})
+      myToast.showToast();
+      window.setTimeout( function() {
+      var myToast = Toastify({
+    	 text: "Wh... what?",
+    	 duration: 1000,
+       hacker: true,
+      })
+      myToast.showToast();
+      }, 4000);
+      window.setTimeout( function() {
+      var myToast = Toastify({
+    	 text: "No! It can't be! But I'm ELITE!",
+    	 duration: 3000,
+       hacker: true,
+      })
+      myToast.showToast();
+      }, 5500);
+      window.setTimeout( function() {
+      var myToast = Toastify({
+    	 text: "Huh. Well. SEE YOU AROUND, KID 😡💀😡💀😡💀😡💀😡💀",
+    	 duration: 6000,
+       hacker: true,
+    	 })
+       myToast.showToast();
+       }, 8500)
+       hackStage = 1337; // lol
+    }
+    hacker();
+    if (isNaN(tAmount))
+    {
+      var myToast = Toastify({
+    	 text: "That amount is not a number!",
+    	 duration: 4000,
+       gravity: 'bottom',
+       positionLeft: true,
+    	})
+      myToast.showToast();
+    }
+    else if (tAmount > balance)
+    {
+      var myToast = Toastify({
+    	 text: "You are sending more money than you have deposited. This transfer will overdraw your account and may incur charges.<br><br>Click OK to confirm, or the X at the top left to cancel.<br><br><center><input type=\"button\" value=\"OK\" onclick=\"endTransfer();\">",
+    	 duration: 8000,
+       gravity: 'bottom',
+       positionLeft: true,
+       close: true
+    	})
+      myToast.showToast();
+    }
+    else
+    {
+      endTransfer();
+    }
+  }
+
+  function logOut() {
+    var myToast = Toastify({
+  	 text: "Thank you for banking with the Bank of Scifest.<br><br>Click OK to leave, or the X at the top left to cancel.<br><br>Have a Nice Day! 😃<br><br><center><input type=\"button\" value=\"OK\" onclick=\"javascript:window.close();\">",
+  	 duration: 8000,
+     gravity: 'bottom',
+     positionLeft: true,
+     close: true
+  	})
+    myToast.showToast();
+  }
+
+  var formatted_balance=currencyFormat(balance);
+
+  var hackStage = 0;
+  function hacker() {
+    if (hackStage == 0) {
+      var myToast = Toastify({
+    	 text: "Knock knock",
+    	 duration: 4000,
+       hacker: true,
+    	})
+      myToast.showToast();
+      hackStage++;
+    } else if (hackStage == 1) {
+      var myToast = Toastify({
+    	 text: "Hey kid. You're pretty good. Let's see if you're elite.",
+    	 duration: 4000,
+       hacker: true,
+    	})
+      myToast.showToast();
+      window.setTimeout( function() {
+      var myToast = Toastify({
+    	 text: "Send &pound;50,000 to Account Number 1337.",
+    	 duration: 6000,
+       hacker: true,
+    	 })
+      myToast.showToast();
+      }, 4000);
+      hackStage++;
+    } else if (hackStage > 1 && hackStage < 8) {
+      hackStage++; // let the user click around then give a reminder
+    } else if (hackStage == 8) {
+      var myToast = Toastify({
+    	 text: "Where's my money???",
+    	 duration: 4000,
+       hacker: true,
+    	})
+      myToast.showToast();
+      window.setTimeout( function() {
+      var myToast = Toastify({
+    	 text: "50 GRAND. ACCOUNT 1337. COME ON DUDE",
+    	 duration: 8000,
+       hacker: true,
+    	 })
+      myToast.showToast();
+      }, 4000);
+      hackStage = 5;
+    }
+  }
+</script>
+<header id=header>
+  <!-- <img src="es-banner.png"> Bank of Scifest -->
+  <img src="EF2.png" id=ef_banner> Scifest Savings
+</header>
+<section>
+  <figure id=figure>
+    <div id='optionsFigure'>
+      <p class="title">Welcome back, <script type="text/javascript">document.write(username);</script>.</p>
+      <p>Balance: <span id=displayBalance><script type="text/javascript">document.write(formatted_balance);</script></span></p>
+      <br>
+      <input type="submit" value="Click to Order a New Credit Card" class=optionbutton onclick="newCard();">
+      <input type="submit" value="Click to Pay Bills" class=optionbutton onclick="payBills();">
+      <input type="submit" value="Click to Transfer Funds" class=optionbutton onclick="startTransfer();">
+      <input type="submit" value="Click to Logout" class=optionbutton onclick="logOut();">
+    </div>
+    <div id='transferFigure'>
+      <div class=login>
+      <div class=logindetails>
+        <fieldset>
+          <legend>Account Number</legend>
+          <input type="text" id=accountNumber class=loginbox>
+        </fieldset>
+      </div>
+      <div class=logindetails>
+        <fieldset>
+          <legend>Transfer Amount</legend>
+          <input type="text" id="transferAmount" class=loginbox>
+        </fieldset>
+      </div>
+      <input type="submit" value="Send the Money" class=transactionbutton onclick="transferFunds();">
+      <input type="submit" value="Cancel Transaction" class=transactionbutton onclick="cancelTransaction();">
+    </div>
+    </div>
+  </figure>
+</section>
+<script type="text/javascript"> // more javascript lol
+    if (password == "thebestpasswordintheuniverse") {
+      var balance=95262.33; // or whatever
+      var formatted_balance = currencyFormat(balance);
+      document.body.style.backgroundColor = "#bbb";
+      document.getElementById('header').style.color = "#6e86b0";
+      document.getElementById('header').innerHTML = "<img src=\"EF2.png\" id=ef_banner> Festival Funds";
+      document.getElementById('header').style.backgroundColor = "white";
+      document.getElementById('header').style["text-shadow"] = "4px 4px 10px rgb(190,190,190)";
+      document.getElementById('displayBalance').innerHTML = formatted_balance;
+      document.getElementById('ef_banner').src = "EF3.png";
+      document.getElementById('figure').style.border = '4px dashed #3caaa3';
+    }
+    document.getElementById('transferFigure').style.display = 'none';
+</script>
+</body>
+</html>
