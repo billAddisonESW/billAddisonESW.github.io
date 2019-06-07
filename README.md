@@ -1,5 +1,5 @@
-## Welcome to GitHub Pages
-Bill Addison
+## Welcome to GitHub Pages, Mr Addison
+
 
 You can use the [editor on GitHub](https://github.com/billAddisonESW/billAddisonESW.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
